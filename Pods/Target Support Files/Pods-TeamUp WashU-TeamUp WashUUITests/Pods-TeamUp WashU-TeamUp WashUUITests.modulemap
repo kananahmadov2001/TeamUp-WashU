@@ -1,0 +1,6 @@
+framework module Pods_TeamUp_WashU_TeamUp_WashUUITests {
+  umbrella header "Pods-TeamUp WashU-TeamUp WashUUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
