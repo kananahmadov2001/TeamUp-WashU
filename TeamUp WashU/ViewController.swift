@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import FSCalendar
 
 class ViewController:
 
@@ -16,7 +17,8 @@ class ViewController:
     @IBOutlet weak var idField: UITextField!
     
     @IBOutlet weak var pswField: UITextField!
-    
+    @IBOutlet weak var mainCalendar: FSCalendar!
+
     func showAlert(message:String){
         let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Confirm", style: .default)
