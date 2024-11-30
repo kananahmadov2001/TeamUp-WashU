@@ -106,7 +106,7 @@ class DashboardViewController: UIViewController, UITableViewDataSource, UITableV
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("Number of rows: \(upcomingAssignments.count)")
+        //print("Number of rows: \(upcomingAssignments.count)")
         return upcomingAssignments.count
     }
 
@@ -116,7 +116,7 @@ class DashboardViewController: UIViewController, UITableViewDataSource, UITableV
 
         cell.textLabel?.text = "\(assignment.dueDate) - \(assignment.projectName)"
         cell.accessoryType = assignment.isCompleted ? .checkmark : .none
-        print("Cell for row \(indexPath.row): \(assignment.dueDate) - \(assignment.projectName)")
+        //print("Cell for row \(indexPath.row): \(assignment.dueDate) - \(assignment.projectName)")
         return cell
     }
 

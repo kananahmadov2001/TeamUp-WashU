@@ -13,7 +13,7 @@ import FirebaseAuth
 class ProfileViewController: UIViewController {
 
     // Outlets for UI elements
-    //@IBOutlet weak var profileImageView: UIImageView!
+    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
@@ -35,13 +35,34 @@ class ProfileViewController: UIViewController {
         // Initial setup
         //setupProfileImageView()
         
-        updateSkillsStackView()
+        //updateSkillsStackView()
         fetchUserData()
     }
 
 //
 
 
+    
+    @IBAction func LogoutButton(_ sender: Any){
+        do{
+            try Auth.auth().signOut()
+            print("logged out succesfully")
+            
+            
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+            guard let window = UIApplication.shared.windows.first else {return}
+            window.rootViewController = loginViewController
+            window.makeKeyAndVisible()
+            
+        }catch let error {
+            print("Eror signing out: \(error.localizedDescription)")
+        }
+        
+    }
+    
+    
 
     // Function to load existing user data
     func fetchUserData() {
