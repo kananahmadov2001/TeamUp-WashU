@@ -198,6 +198,7 @@ class ProfileViewController: UIViewController {
                 
             }else {
                 print("Profile updated successfully")
+                self.fetchUserData()
             }
         }
         
