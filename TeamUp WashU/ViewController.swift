@@ -39,12 +39,17 @@ class ViewController:
         
         Auth.auth().signIn(withEmail: email, password: psw) { authResult, error in
             if let error = error {
+                
+                print("Error sign in: \(error.localizedDescription) ")
                 self.showAlert(message: "Login Error")
+                
                return
             }
                     //self.NavigateToDashboard()
             print("User logged in successfully: \(authResult?.user.email ?? "")")
             self.showAlert(message: "Logged in")
+            self.NavigateToLoginPage()
+            
             }
         
         
@@ -62,23 +67,54 @@ class ViewController:
         
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
             if let error = error {
-                self.showAlert(message: "Login Error")
+                print("Error sign up: \(error.localizedDescription) ")
+
+                self.showAlert(message: " Signup Error")
+                
                 return
             }
             //self.NavigateToLoginPage()
             print("User signed up successfully: \(authResult?.user.email ?? "")")
             self.showAlert(message: "Registered successfully")
-            self.performSegue(withIdentifier: "showTabController", sender: nil)
+            self.NavigateToLoginPage()
+           
         }
     }
     
     
     func NavigateToLoginPage() {
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        
+        let tabBarController = storyboard.instantiateViewController(withIdentifier: "tabBarController") as! UITabBarController
+        
+        guard let window = UIApplication.shared.windows.first else {return}
+        window.rootViewController = tabBarController
+        window.makeKeyAndVisible()
+    
+        
                   
               }
 
     
-
+    @IBAction func LogoutButton(_ sender: Any){
+        do{
+            try Auth.auth().signOut()
+            print("logged out succesfully")
+            
+            
+            
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+//            guard let window = UIApplication.shared.windows.first else {return}
+//            window.rootViewController = loginViewController
+//            window.makeKeyAndVisible()
+            
+        }catch let error {
+            print("Eror signing out: \(error.localizedDescription)")
+        }
+        
+    }
     
     
     @IBOutlet weak var loginResultLabel: UILabel!
@@ -87,6 +123,9 @@ class ViewController:
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        if Auth.auth().currentUser != nil {
+            NavigateToLoginPage()
+        }
     }
 
 

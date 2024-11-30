@@ -21,6 +21,7 @@
 		B77624502CE158E6009F5952 /* TeamUp_WashUTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B776244F2CE158E6009F5952 /* TeamUp_WashUTests.swift */; };
 		B776245A2CE158E6009F5952 /* TeamUp_WashUUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77624592CE158E6009F5952 /* TeamUp_WashUUITests.swift */; };
 		B776245C2CE158E6009F5952 /* TeamUp_WashUUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B776245B2CE158E6009F5952 /* TeamUp_WashUUITestsLaunchTests.swift */; };
+		CDBC32282CFA8164003F0BF9 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBC32272CFA8164003F0BF9 /* MainTabBarController.swift */; };
 		CDDA90EE2CE43C14005C06AC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDDA90ED2CE43C14005C06AC /* GoogleService-Info.plist */; };
 		CDDA90F12CE43CBE005C06AC /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = CDDA90F02CE43CBE005C06AC /* FirebaseAnalytics */; };
 		CDDA90F32CE43CBE005C06AC /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CDDA90F22CE43CBE005C06AC /* FirebaseAuth */; };
@@ -64,6 +65,7 @@
 		B77624552CE158E6009F5952 /* TeamUp WashUUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TeamUp WashUUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B77624592CE158E6009F5952 /* TeamUp_WashUUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamUp_WashUUITests.swift; sourceTree = "<group>"; };
 		B776245B2CE158E6009F5952 /* TeamUp_WashUUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamUp_WashUUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CDBC32272CFA8164003F0BF9 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		CDDA90ED2CE43C14005C06AC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,6 +128,7 @@
 				5893024D2CE348CB005B7CB9 /* CreateEventViewController.swift */,
 				589302472CE33751005B7CB9 /* ProfileViewController.swift */,
 				589302492CE33780005B7CB9 /* CalendarViewController.swift */,
+				CDBC32272CFA8164003F0BF9 /* MainTabBarController.swift */,
 				CDDA90ED2CE43C14005C06AC /* GoogleService-Info.plist */,
 				5893024B2CE337B0005B7CB9 /* ChatViewController.swift */,
 				B776243E2CE158E3009F5952 /* Main.storyboard */,
@@ -296,6 +299,7 @@
 			files = (
 				5893024A2CE33780005B7CB9 /* CalendarViewController.swift in Sources */,
 				B776243D2CE158E3009F5952 /* ViewController.swift in Sources */,
+				CDBC32282CFA8164003F0BF9 /* MainTabBarController.swift in Sources */,
 				B77624392CE158E3009F5952 /* AppDelegate.swift in Sources */,
 				5893024C2CE337B0005B7CB9 /* ChatViewController.swift in Sources */,
 				589302482CE33751005B7CB9 /* ProfileViewController.swift in Sources */,

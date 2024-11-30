@@ -14,7 +14,7 @@
             <objects>
                 <viewController title="LoginViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="TeamUp_WashU" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter ID" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="gqb-hy-oEG">
@@ -65,6 +65,12 @@
                                     <action selector="RegisterButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fZc-Ka-IWe"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="546-LY-NhZ">
+                                <rect key="frame" x="299" y="59" width="78" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Logout"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -79,7 +85,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2512" y="-47"/>
+            <point key="canvasLocation" x="2645" y="-887"/>
         </scene>
         <!--DashboardViewController-->
         <scene sceneID="nES-fm-Fur">
@@ -226,12 +232,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l0Q-qi-Oj3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5168.7022900763359" y="-889.43661971830988"/>
+            <point key="canvasLocation" x="5274" y="-887"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="drL-ZC-Okn">
             <objects>
-                <tabBarController id="RyL-h3-ngm" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBarController" id="RyL-h3-ngm" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Ean-e7-bKe"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6c2-vO-2nD">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
@@ -243,7 +249,6 @@
                         <segue destination="sYc-cu-IEw" kind="relationship" relationship="viewControllers" id="5hU-GE-JIY"/>
                         <segue destination="wcY-CH-Sdu" kind="relationship" relationship="viewControllers" id="Y1D-Rj-9jb"/>
                         <segue destination="D1V-OD-hba" kind="relationship" relationship="viewControllers" id="cwB-HG-vUJ"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="showTabController" id="vYT-tq-KY2"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sBO-cX-2tI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
