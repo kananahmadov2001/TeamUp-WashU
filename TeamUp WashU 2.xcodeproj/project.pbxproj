@@ -7,18 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B06447C4C4082CAF5AC9522 /* Pods_TeamUp_WashUTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D58E94404FA62DC192FE9D8C /* Pods_TeamUp_WashUTests.framework */; };
-		2A2A076C2CFC61CB009D900C /* Assignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2A076B2CFC61CB009D900C /* Assignment.swift */; };
-		2A2A076F2CFC6321009D900C /* CalendarAssignmentEmptyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A2A076E2CFC6321009D900C /* CalendarAssignmentEmptyTableViewCell.xib */; };
-		2A2A07702CFC6321009D900C /* CalendarAssignmentEmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2A076D2CFC6321009D900C /* CalendarAssignmentEmptyTableViewCell.swift */; };
-		2A2A07732CFC6740009D900C /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2A07722CFC6740009D900C /* Date+.swift */; };
-		2A2A07752CFC6DED009D900C /* AddAssignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2A07742CFC6DED009D900C /* AddAssignmentViewController.swift */; };
-		2AFD05402CFC780E007C84AD /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFD053F2CFC780E007C84AD /* UIViewController+.swift */; };
-		2AFF95842CFC5F3B00CBFB12 /* CalendarAssignmentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AFF95832CFC5F3B00CBFB12 /* CalendarAssignmentTableViewCell.xib */; };
-		2AFF95852CFC5F3B00CBFB12 /* CalendarAssignmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFF95822CFC5F3B00CBFB12 /* CalendarAssignmentTableViewCell.swift */; };
 		589302482CE33751005B7CB9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589302472CE33751005B7CB9 /* ProfileViewController.swift */; };
 		5893024A2CE33780005B7CB9 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589302492CE33780005B7CB9 /* CalendarViewController.swift */; };
 		5893024C2CE337B0005B7CB9 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5893024B2CE337B0005B7CB9 /* ChatViewController.swift */; };
+		5893024E2CE348CB005B7CB9 /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5893024D2CE348CB005B7CB9 /* CreateEventViewController.swift */; };
 		58F6FA402CE333ED00E2391A /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F6FA3F2CE333EC00E2391A /* DashboardViewController.swift */; };
 		B77624392CE158E3009F5952 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77624382CE158E3009F5952 /* AppDelegate.swift */; };
 		B776243B2CE158E3009F5952 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B776243A2CE158E3009F5952 /* SceneDelegate.swift */; };
@@ -29,11 +21,6 @@
 		B77624502CE158E6009F5952 /* TeamUp_WashUTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B776244F2CE158E6009F5952 /* TeamUp_WashUTests.swift */; };
 		B776245A2CE158E6009F5952 /* TeamUp_WashUUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77624592CE158E6009F5952 /* TeamUp_WashUUITests.swift */; };
 		B776245C2CE158E6009F5952 /* TeamUp_WashUUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B776245B2CE158E6009F5952 /* TeamUp_WashUUITestsLaunchTests.swift */; };
-		C335F0A88A9B1701FF477B08 /* Pods_TeamUp_WashU_TeamUp_WashUUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEE121FF4900A164FF7A752E /* Pods_TeamUp_WashU_TeamUp_WashUUITests.framework */; };
-		C46D44BE6F0AC4C2CD831D04 /* Pods_TeamUp_WashU.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2881EE6C0C77F8B9EE9DF0F /* Pods_TeamUp_WashU.framework */; };
-		CD4497B72CFBD5D500BA853C /* AssignmentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4497B62CFBD5D500BA853C /* AssignmentCollectionViewCell.swift */; };
-		CD4497B92CFBD64D00BA853C /* AssignmentDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4497B82CFBD64D00BA853C /* AssignmentDetailsViewController.swift */; };
-		CDBC32282CFA8164003F0BF9 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBC32272CFA8164003F0BF9 /* MainTabBarController.swift */; };
 		CDDA90EE2CE43C14005C06AC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDDA90ED2CE43C14005C06AC /* GoogleService-Info.plist */; };
 		CDDA90F12CE43CBE005C06AC /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = CDDA90F02CE43CBE005C06AC /* FirebaseAnalytics */; };
 		CDDA90F32CE43CBE005C06AC /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CDDA90F22CE43CBE005C06AC /* FirebaseAuth */; };
@@ -59,22 +46,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		020078CA1A99E12A27A03993 /* Pods-TeamUp WashUTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamUp WashUTests.release.xcconfig"; path = "Target Support Files/Pods-TeamUp WashUTests/Pods-TeamUp WashUTests.release.xcconfig"; sourceTree = "<group>"; };
-		2A2A076B2CFC61CB009D900C /* Assignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignment.swift; sourceTree = "<group>"; };
-		2A2A076D2CFC6321009D900C /* CalendarAssignmentEmptyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarAssignmentEmptyTableViewCell.swift; sourceTree = "<group>"; };
-		2A2A076E2CFC6321009D900C /* CalendarAssignmentEmptyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarAssignmentEmptyTableViewCell.xib; sourceTree = "<group>"; };
-		2A2A07722CFC6740009D900C /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
-		2A2A07742CFC6DED009D900C /* AddAssignmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAssignmentViewController.swift; sourceTree = "<group>"; };
-		2AFD053F2CFC780E007C84AD /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
-		2AFF95822CFC5F3B00CBFB12 /* CalendarAssignmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarAssignmentTableViewCell.swift; sourceTree = "<group>"; };
-		2AFF95832CFC5F3B00CBFB12 /* CalendarAssignmentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarAssignmentTableViewCell.xib; sourceTree = "<group>"; };
-		34711559C2CB815C5F409E76 /* Pods-TeamUp WashU-TeamUp WashUUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamUp WashU-TeamUp WashUUITests.debug.xcconfig"; path = "Target Support Files/Pods-TeamUp WashU-TeamUp WashUUITests/Pods-TeamUp WashU-TeamUp WashUUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		55A71AD684EEE4F29E364111 /* Pods-TeamUp WashU.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamUp WashU.debug.xcconfig"; path = "Target Support Files/Pods-TeamUp WashU/Pods-TeamUp WashU.debug.xcconfig"; sourceTree = "<group>"; };
 		589302472CE33751005B7CB9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		589302492CE33780005B7CB9 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		5893024B2CE337B0005B7CB9 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		5893024D2CE348CB005B7CB9 /* CreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
 		58F6FA3F2CE333EC00E2391A /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
-		5B3E67937DF383CE082B712C /* Pods-TeamUp WashU-TeamUp WashUUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamUp WashU-TeamUp WashUUITests.release.xcconfig"; path = "Target Support Files/Pods-TeamUp WashU-TeamUp WashUUITests/Pods-TeamUp WashU-TeamUp WashUUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B77624352CE158E3009F5952 /* TeamUp WashU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TeamUp WashU.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B77624382CE158E3009F5952 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B776243A2CE158E3009F5952 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,15 +64,7 @@
 		B77624552CE158E6009F5952 /* TeamUp WashUUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TeamUp WashUUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B77624592CE158E6009F5952 /* TeamUp_WashUUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamUp_WashUUITests.swift; sourceTree = "<group>"; };
 		B776245B2CE158E6009F5952 /* TeamUp_WashUUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamUp_WashUUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		CD4497B62CFBD5D500BA853C /* AssignmentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentCollectionViewCell.swift; sourceTree = "<group>"; };
-		CD4497B82CFBD64D00BA853C /* AssignmentDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentDetailsViewController.swift; sourceTree = "<group>"; };
-		CDBC32272CFA8164003F0BF9 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		CDDA90ED2CE43C14005C06AC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		D54A1E93C52E0BC6B391E208 /* Pods-TeamUp WashU.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamUp WashU.release.xcconfig"; path = "Target Support Files/Pods-TeamUp WashU/Pods-TeamUp WashU.release.xcconfig"; sourceTree = "<group>"; };
-		D58E94404FA62DC192FE9D8C /* Pods_TeamUp_WashUTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeamUp_WashUTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D77ABA98EC8A4F5BD201352E /* Pods-TeamUp WashUTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamUp WashUTests.debug.xcconfig"; path = "Target Support Files/Pods-TeamUp WashUTests/Pods-TeamUp WashUTests.debug.xcconfig"; sourceTree = "<group>"; };
-		DEE121FF4900A164FF7A752E /* Pods_TeamUp_WashU_TeamUp_WashUUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeamUp_WashU_TeamUp_WashUUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E2881EE6C0C77F8B9EE9DF0F /* Pods_TeamUp_WashU.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeamUp_WashU.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +76,6 @@
 				CDDA90F72CE43CBE005C06AC /* FirebaseStorage in Frameworks */,
 				CDDA90F32CE43CBE005C06AC /* FirebaseAuth in Frameworks */,
 				CDDA90F52CE43CBE005C06AC /* FirebaseFirestore in Frameworks */,
-				C46D44BE6F0AC4C2CD831D04 /* Pods_TeamUp_WashU.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,7 +83,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B06447C4C4082CAF5AC9522 /* Pods_TeamUp_WashUTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,93 +90,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C335F0A88A9B1701FF477B08 /* Pods_TeamUp_WashU_TeamUp_WashUUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2A2A076A2CFC61C0009D900C /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				2A2A076B2CFC61CB009D900C /* Assignment.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		2A2A07712CFC672C009D900C /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				2A2A07722CFC6740009D900C /* Date+.swift */,
-				2AFD053F2CFC780E007C84AD /* UIViewController+.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		2AFF957D2CFC5C8200CBFB12 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				B776243C2CE158E3009F5952 /* ViewController.swift */,
-				58F6FA3F2CE333EC00E2391A /* DashboardViewController.swift */,
-				CD4497B82CFBD64D00BA853C /* AssignmentDetailsViewController.swift */,
-				589302472CE33751005B7CB9 /* ProfileViewController.swift */,
-				589302492CE33780005B7CB9 /* CalendarViewController.swift */,
-				CDBC32272CFA8164003F0BF9 /* MainTabBarController.swift */,
-				5893024B2CE337B0005B7CB9 /* ChatViewController.swift */,
-				2A2A07742CFC6DED009D900C /* AddAssignmentViewController.swift */,
-			);
-			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		2AFF957E2CFC5C8C00CBFB12 /* App */ = {
-			isa = PBXGroup;
-			children = (
-				B77624382CE158E3009F5952 /* AppDelegate.swift */,
-				B776243A2CE158E3009F5952 /* SceneDelegate.swift */,
-			);
-			path = App;
-			sourceTree = "<group>";
-		};
-		2AFF957F2CFC5CA100CBFB12 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				2AFF95812CFC5EEA00CBFB12 /* CalendarAssignment */,
-				CD4497B62CFBD5D500BA853C /* AssignmentCollectionViewCell.swift */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		2AFF95802CFC5CB900CBFB12 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				B77624412CE158E5009F5952 /* Assets.xcassets */,
-				B77624432CE158E5009F5952 /* LaunchScreen.storyboard */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		2AFF95812CFC5EEA00CBFB12 /* CalendarAssignment */ = {
-			isa = PBXGroup;
-			children = (
-				2AFF95822CFC5F3B00CBFB12 /* CalendarAssignmentTableViewCell.swift */,
-				2AFF95832CFC5F3B00CBFB12 /* CalendarAssignmentTableViewCell.xib */,
-				2A2A076D2CFC6321009D900C /* CalendarAssignmentEmptyTableViewCell.swift */,
-				2A2A076E2CFC6321009D900C /* CalendarAssignmentEmptyTableViewCell.xib */,
-			);
-			path = CalendarAssignment;
-			sourceTree = "<group>";
-		};
-		3BEA01FB5E491B4B168B71E3 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E2881EE6C0C77F8B9EE9DF0F /* Pods_TeamUp_WashU.framework */,
-				DEE121FF4900A164FF7A752E /* Pods_TeamUp_WashU_TeamUp_WashUUITests.framework */,
-				D58E94404FA62DC192FE9D8C /* Pods_TeamUp_WashUTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		B776242C2CE158E2009F5952 = {
 			isa = PBXGroup;
 			children = (
@@ -218,8 +103,6 @@
 				B776244E2CE158E6009F5952 /* TeamUp WashUTests */,
 				B77624582CE158E6009F5952 /* TeamUp WashUUITests */,
 				B77624362CE158E3009F5952 /* Products */,
-				DFC633A3C8FDF7D7218EE2BC /* Pods */,
-				3BEA01FB5E491B4B168B71E3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -236,14 +119,18 @@
 		B77624372CE158E3009F5952 /* TeamUp WashU */ = {
 			isa = PBXGroup;
 			children = (
-				2A2A07712CFC672C009D900C /* Extensions */,
-				B776243E2CE158E3009F5952 /* Main.storyboard */,
-				2A2A076A2CFC61C0009D900C /* Models */,
-				2AFF95802CFC5CB900CBFB12 /* Resources */,
-				2AFF957E2CFC5C8C00CBFB12 /* App */,
-				2AFF957F2CFC5CA100CBFB12 /* Cells */,
-				2AFF957D2CFC5C8200CBFB12 /* ViewControllers */,
+				B77624382CE158E3009F5952 /* AppDelegate.swift */,
+				B776243A2CE158E3009F5952 /* SceneDelegate.swift */,
+				B776243C2CE158E3009F5952 /* ViewController.swift */,
+				58F6FA3F2CE333EC00E2391A /* DashboardViewController.swift */,
+				5893024D2CE348CB005B7CB9 /* CreateEventViewController.swift */,
+				589302472CE33751005B7CB9 /* ProfileViewController.swift */,
+				589302492CE33780005B7CB9 /* CalendarViewController.swift */,
 				CDDA90ED2CE43C14005C06AC /* GoogleService-Info.plist */,
+				5893024B2CE337B0005B7CB9 /* ChatViewController.swift */,
+				B776243E2CE158E3009F5952 /* Main.storyboard */,
+				B77624412CE158E5009F5952 /* Assets.xcassets */,
+				B77624432CE158E5009F5952 /* LaunchScreen.storyboard */,
 				B77624462CE158E5009F5952 /* Info.plist */,
 			);
 			path = "TeamUp WashU";
@@ -266,19 +153,6 @@
 			path = "TeamUp WashUUITests";
 			sourceTree = "<group>";
 		};
-		DFC633A3C8FDF7D7218EE2BC /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				55A71AD684EEE4F29E364111 /* Pods-TeamUp WashU.debug.xcconfig */,
-				D54A1E93C52E0BC6B391E208 /* Pods-TeamUp WashU.release.xcconfig */,
-				34711559C2CB815C5F409E76 /* Pods-TeamUp WashU-TeamUp WashUUITests.debug.xcconfig */,
-				5B3E67937DF383CE082B712C /* Pods-TeamUp WashU-TeamUp WashUUITests.release.xcconfig */,
-				D77ABA98EC8A4F5BD201352E /* Pods-TeamUp WashUTests.debug.xcconfig */,
-				020078CA1A99E12A27A03993 /* Pods-TeamUp WashUTests.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -286,11 +160,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B776245F2CE158E6009F5952 /* Build configuration list for PBXNativeTarget "TeamUp WashU" */;
 			buildPhases = (
-				824292892B1F0524E073840A /* [CP] Check Pods Manifest.lock */,
 				B77624312CE158E3009F5952 /* Sources */,
 				B77624322CE158E3009F5952 /* Frameworks */,
 				B77624332CE158E3009F5952 /* Resources */,
-				39B30A3BCAE837F15139BA24 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -311,7 +183,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B77624622CE158E6009F5952 /* Build configuration list for PBXNativeTarget "TeamUp WashUTests" */;
 			buildPhases = (
-				E94C38A719C9AF0239CBF4DE /* [CP] Check Pods Manifest.lock */,
 				B77624472CE158E6009F5952 /* Sources */,
 				B77624482CE158E6009F5952 /* Frameworks */,
 				B77624492CE158E6009F5952 /* Resources */,
@@ -330,11 +201,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B77624652CE158E6009F5952 /* Build configuration list for PBXNativeTarget "TeamUp WashUUITests" */;
 			buildPhases = (
-				1959333515C03382D382C8F0 /* [CP] Check Pods Manifest.lock */,
 				B77624512CE158E6009F5952 /* Sources */,
 				B77624522CE158E6009F5952 /* Frameworks */,
 				B77624532CE158E6009F5952 /* Resources */,
-				A384E99F716E4953EE43CCB3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -397,9 +266,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2AFF95842CFC5F3B00CBFB12 /* CalendarAssignmentTableViewCell.xib in Resources */,
 				B77624422CE158E5009F5952 /* Assets.xcassets in Resources */,
-				2A2A076F2CFC6321009D900C /* CalendarAssignmentEmptyTableViewCell.xib in Resources */,
 				CDDA90EE2CE43C14005C06AC /* GoogleService-Info.plist in Resources */,
 				B77624452CE158E5009F5952 /* Base in Resources */,
 				B77624402CE158E3009F5952 /* Base in Resources */,
@@ -422,130 +289,19 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		1959333515C03382D382C8F0 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TeamUp WashU-TeamUp WashUUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		39B30A3BCAE837F15139BA24 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TeamUp WashU/Pods-TeamUp WashU-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TeamUp WashU/Pods-TeamUp WashU-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TeamUp WashU/Pods-TeamUp WashU-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		824292892B1F0524E073840A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TeamUp WashU-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A384E99F716E4953EE43CCB3 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TeamUp WashU-TeamUp WashUUITests/Pods-TeamUp WashU-TeamUp WashUUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TeamUp WashU-TeamUp WashUUITests/Pods-TeamUp WashU-TeamUp WashUUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TeamUp WashU-TeamUp WashUUITests/Pods-TeamUp WashU-TeamUp WashUUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E94C38A719C9AF0239CBF4DE /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TeamUp WashUTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		B77624312CE158E3009F5952 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A2A076C2CFC61CB009D900C /* Assignment.swift in Sources */,
-				2A2A07752CFC6DED009D900C /* AddAssignmentViewController.swift in Sources */,
 				5893024A2CE33780005B7CB9 /* CalendarViewController.swift in Sources */,
 				B776243D2CE158E3009F5952 /* ViewController.swift in Sources */,
-				CD4497B92CFBD64D00BA853C /* AssignmentDetailsViewController.swift in Sources */,
-				2AFF95852CFC5F3B00CBFB12 /* CalendarAssignmentTableViewCell.swift in Sources */,
-				CDBC32282CFA8164003F0BF9 /* MainTabBarController.swift in Sources */,
 				B77624392CE158E3009F5952 /* AppDelegate.swift in Sources */,
-				2A2A07732CFC6740009D900C /* Date+.swift in Sources */,
 				5893024C2CE337B0005B7CB9 /* ChatViewController.swift in Sources */,
-				2AFD05402CFC780E007C84AD /* UIViewController+.swift in Sources */,
-				2A2A07702CFC6321009D900C /* CalendarAssignmentEmptyTableViewCell.swift in Sources */,
-				CD4497B72CFBD5D500BA853C /* AssignmentCollectionViewCell.swift in Sources */,
 				589302482CE33751005B7CB9 /* ProfileViewController.swift in Sources */,
 				B776243B2CE158E3009F5952 /* SceneDelegate.swift in Sources */,
 				58F6FA402CE333ED00E2391A /* DashboardViewController.swift in Sources */,
+				5893024E2CE348CB005B7CB9 /* CreateEventViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -638,7 +394,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -701,7 +457,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -722,7 +478,6 @@
 		};
 		B77624602CE158E6009F5952 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55A71AD684EEE4F29E364111 /* Pods-TeamUp WashU.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -735,7 +490,6 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -751,7 +505,6 @@
 		};
 		B77624612CE158E6009F5952 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D54A1E93C52E0BC6B391E208 /* Pods-TeamUp WashU.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -764,7 +517,6 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -780,7 +532,6 @@
 		};
 		B77624632CE158E6009F5952 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D77ABA98EC8A4F5BD201352E /* Pods-TeamUp WashUTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -800,7 +551,6 @@
 		};
 		B77624642CE158E6009F5952 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 020078CA1A99E12A27A03993 /* Pods-TeamUp WashUTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -820,7 +570,6 @@
 		};
 		B77624662CE158E6009F5952 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 34711559C2CB815C5F409E76 /* Pods-TeamUp WashU-TeamUp WashUUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -838,7 +587,6 @@
 		};
 		B77624672CE158E6009F5952 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B3E67937DF383CE082B712C /* Pods-TeamUp WashU-TeamUp WashUUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

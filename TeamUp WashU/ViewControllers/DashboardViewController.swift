@@ -2,18 +2,10 @@ import UIKit
 import FirebaseFirestore
 import FirebaseAuth
 
-struct Assignment: Codable {
-    var id: String // Unique identifier for Firestore
-    var name: String
-    var dueDate: String
-    var description: String
-    var teammates: [String]
-    var isCompleted: Bool
-    var categories: [String]
-}
 
 class DashboardViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
+    let refreshControl = UIRefreshControl()
     // Outlets
     @IBOutlet weak var dashboardLabel: UILabel!
     @IBOutlet weak var assignmentsCollectionView: UICollectionView!
@@ -34,8 +26,6 @@ class DashboardViewController: UIViewController, UICollectionViewDataSource, UIC
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        dashboardLabel.text = "Main Dashboard!"
-
         assignmentsCollectionView.dataSource = self
         assignmentsCollectionView.delegate = self
         assignmentsCollectionView.register(AssignmentCollectionViewCell.self, forCellWithReuseIdentifier: "assignmentCell")
@@ -44,6 +34,16 @@ class DashboardViewController: UIViewController, UICollectionViewDataSource, UIC
         completionSegmentedControl.isHidden = true
 
         loadAssignmentsFromFirebase()
+        
+        refreshControl.tintColor = .systemBlue
+        refreshControl.addTarget(self, action: #selector(pullToRefresh(_:)), for: .valueChanged)
+        assignmentsCollectionView.refreshControl = refreshControl
+
+    }
+    
+    @objc func pullToRefresh(_ sender: Any) {
+        loadAssignmentsFromFirebase()
+        refreshControl.endRefreshing()
     }
 
     // MARK: - Load Assignments from Firebase
@@ -125,12 +125,12 @@ class DashboardViewController: UIViewController, UICollectionViewDataSource, UIC
                   let description = alertController.textFields?[2].text, !description.isEmpty,
                   let teammatesText = alertController.textFields?[3].text, !teammatesText.isEmpty,
                   let category = alertController.textFields?[4].text, !category.isEmpty else {
-                self.showAlert(message: "All fields are required.")
+                self.showErrorAlert(message: "All fields are required.")
                 return
             }
 
             guard self.isValidDateFormat(dueDate), self.isFutureDate(dueDate) else {
-                self.showAlert(message: "Due date must be in the future.")
+                self.showErrorAlert(message: "Due date must be in the future.")
                 return
             }
 
@@ -202,11 +202,7 @@ class DashboardViewController: UIViewController, UICollectionViewDataSource, UIC
         return false
     }
 
-    private func showAlert(message: String) {
-        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-        present(alert, animated: true)
-    }
+
 
     // MARK: - UICollectionView DataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
