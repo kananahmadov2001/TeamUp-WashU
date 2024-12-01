@@ -453,7 +453,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="4hb-Oa-1Hl">
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="4hb-Oa-1Hl">
                                 <rect key="frame" x="16" y="504" width="49.666666666666657" height="34.333333333333371"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ylK-Tp-Eq6">
@@ -495,7 +495,7 @@
                                     <action selector="saveProfileTapped:" destination="D1V-OD-hba" eventType="touchUpInside" id="IdJ-MQ-65r"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r8h-Mu-28s">
+                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r8h-Mu-28s">
                                 <rect key="frame" x="86" y="260" width="249" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -504,10 +504,6 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="04o-SF-dqV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="4hb-Oa-1Hl" firstAttribute="top" secondItem="04o-SF-dqV" secondAttribute="top" constant="504" id="5dy-9i-FSb"/>
-                            <constraint firstItem="04o-SF-dqV" firstAttribute="bottom" secondItem="ylK-Tp-Eq6" secondAttribute="bottom" constant="254.66666666666663" id="LSc-J1-Vi8"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="person.crop.circle" catalog="system" selectedImage="person.crop.circle.fill" id="pnW-xr-d23"/>
                     <connections>

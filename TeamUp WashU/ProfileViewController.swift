@@ -32,10 +32,7 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Initial setup
-        //setupProfileImageView()
         
-        //updateSkillsStackView()
         fetchUserData()
     }
 
@@ -67,6 +64,7 @@ class ProfileViewController: UIViewController {
     // Function to load existing user data
     func fetchUserData() {
         guard let userID = Auth.auth().currentUser?.uid else { return }
+        self.userID = userID
         
         let userDocRef = db.collection("users").document(userID)
         userDocRef.getDocument {(document, error)  in
@@ -106,6 +104,7 @@ class ProfileViewController: UIViewController {
                 print("Error creating user document: \(error.localizedDescription)")
             } else {
                 print("New user document created!")
+                self.fetchUserData()
             }
         }
     }
@@ -156,9 +155,14 @@ class ProfileViewController: UIViewController {
 
         let submitAction = UIAlertAction(title: "Submit", style: .default) { _ in
             if let skill = alertController.textFields?.first?.text, !skill.isEmpty {
-                self.skills.append(skill)
-                self.updateSkillsStackView()
-                self.saveSkills()
+                if !self.skills.contains(skill){
+                    self.skills.append(skill)
+                    self.updateSkillsStackView()
+                    self.saveSkills()
+                } else {
+                    print("Skill already exists")
+                }
+                
             }
         }
 
@@ -184,6 +188,21 @@ class ProfileViewController: UIViewController {
     
     @IBAction func saveProfileTapped(_ sender: UIButton){
         guard let userID = userID else { return }
+        
+        guard let name = nameTextField.text, !name.isEmpty else {
+            print("Name cannot be empty")
+            return
+        }
+        
+        guard let phone = phoneTextField.text, !phone.isEmpty else {
+            print("phone cannot be empty")
+            return
+        }
+        
+        guard let major = majorTextField.text, !major.isEmpty else {
+            print("Major cannot be empty")
+            return
+        }
         
         let updatedData : [String: Any] = [
             "name": nameTextField.text ?? "",

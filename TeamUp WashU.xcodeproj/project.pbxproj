@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0223C33F2CFAEAB700085C28 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 0223C33E2CFAEAB700085C28 /* FSCalendar */; };
 		0B06447C4C4082CAF5AC9522 /* Pods_TeamUp_WashUTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D58E94404FA62DC192FE9D8C /* Pods_TeamUp_WashUTests.framework */; };
 		589302482CE33751005B7CB9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589302472CE33751005B7CB9 /* ProfileViewController.swift */; };
 		5893024A2CE33780005B7CB9 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589302492CE33780005B7CB9 /* CalendarViewController.swift */; };
@@ -90,7 +89,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDDA90F12CE43CBE005C06AC /* FirebaseAnalytics in Frameworks */,
-				0223C33F2CFAEAB700085C28 /* FSCalendar in Frameworks */,
 				CDDA90F72CE43CBE005C06AC /* FirebaseStorage in Frameworks */,
 				CDDA90F32CE43CBE005C06AC /* FirebaseAuth in Frameworks */,
 				CDDA90F52CE43CBE005C06AC /* FirebaseFirestore in Frameworks */,
@@ -224,7 +222,6 @@
 				CDDA90F22CE43CBE005C06AC /* FirebaseAuth */,
 				CDDA90F42CE43CBE005C06AC /* FirebaseFirestore */,
 				CDDA90F62CE43CBE005C06AC /* FirebaseStorage */,
-				0223C33E2CFAEAB700085C28 /* FSCalendar */,
 			);
 			productName = "TeamUp WashU";
 			productReference = B77624352CE158E3009F5952 /* TeamUp WashU.app */;
@@ -303,7 +300,6 @@
 			mainGroup = B776242C2CE158E2009F5952;
 			packageReferences = (
 				CDDA90EF2CE43CBE005C06AC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				0223C33D2CFAEAB700085C28 /* XCRemoteSwiftPackageReference "FSCalendar" */,
 			);
 			productRefGroup = B77624362CE158E3009F5952 /* Products */;
 			projectDirPath = "";
@@ -810,14 +806,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		0223C33D2CFAEAB700085C28 /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/WenchaoD/FSCalendar";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.8.4;
-			};
-		};
 		CDDA90EF2CE43CBE005C06AC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -829,11 +817,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0223C33E2CFAEAB700085C28 /* FSCalendar */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 0223C33D2CFAEAB700085C28 /* XCRemoteSwiftPackageReference "FSCalendar" */;
-			productName = FSCalendar;
-		};
 		CDDA90F02CE43CBE005C06AC /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CDDA90EF2CE43CBE005C06AC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
