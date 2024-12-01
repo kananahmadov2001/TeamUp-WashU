@@ -50,36 +50,6 @@
             endingLineNumber = "72"
             landmarkName = "fetchUserData()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "B468D2B3-5036-4427-B63A-9352B5A0C6C8 - 166f8d89db6818f0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TeamUp_WashU.ProfileViewController.fetchUserData() -&gt; ()"
-                  moduleName = "TeamUp WashU"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/a.sow/Downloads/TeamUp%20WashU/TeamUp%20WashU/ProfileViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "72"
-                  endingLineNumber = "72">
-               </Location>
-               <Location
-                  uuid = "B468D2B3-5036-4427-B63A-9352B5A0C6C8 - 97ee75f702548542"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRDocumentSnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TeamUp_WashU.ProfileViewController.fetchUserData() -&gt; ()"
-                  moduleName = "TeamUp WashU"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/a.sow/Downloads/TeamUp%20WashU/TeamUp%20WashU/ProfileViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "72"
-                  endingLineNumber = "72">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

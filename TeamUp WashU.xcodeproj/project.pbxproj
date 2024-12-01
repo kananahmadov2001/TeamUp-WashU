@@ -12,7 +12,6 @@
 		589302482CE33751005B7CB9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589302472CE33751005B7CB9 /* ProfileViewController.swift */; };
 		5893024A2CE33780005B7CB9 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589302492CE33780005B7CB9 /* CalendarViewController.swift */; };
 		5893024C2CE337B0005B7CB9 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5893024B2CE337B0005B7CB9 /* ChatViewController.swift */; };
-		5893024E2CE348CB005B7CB9 /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5893024D2CE348CB005B7CB9 /* CreateEventViewController.swift */; };
 		58F6FA402CE333ED00E2391A /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F6FA3F2CE333EC00E2391A /* DashboardViewController.swift */; };
 		B77624392CE158E3009F5952 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77624382CE158E3009F5952 /* AppDelegate.swift */; };
 		B776243B2CE158E3009F5952 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B776243A2CE158E3009F5952 /* SceneDelegate.swift */; };
@@ -25,6 +24,8 @@
 		B776245C2CE158E6009F5952 /* TeamUp_WashUUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B776245B2CE158E6009F5952 /* TeamUp_WashUUITestsLaunchTests.swift */; };
 		C335F0A88A9B1701FF477B08 /* Pods_TeamUp_WashU_TeamUp_WashUUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEE121FF4900A164FF7A752E /* Pods_TeamUp_WashU_TeamUp_WashUUITests.framework */; };
 		C46D44BE6F0AC4C2CD831D04 /* Pods_TeamUp_WashU.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2881EE6C0C77F8B9EE9DF0F /* Pods_TeamUp_WashU.framework */; };
+		CD4497B72CFBD5D500BA853C /* AssignmentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4497B62CFBD5D500BA853C /* AssignmentCollectionViewCell.swift */; };
+		CD4497B92CFBD64D00BA853C /* AssignmentDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4497B82CFBD64D00BA853C /* AssignmentDetailsViewController.swift */; };
 		CDBC32282CFA8164003F0BF9 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBC32272CFA8164003F0BF9 /* MainTabBarController.swift */; };
 		CDDA90EE2CE43C14005C06AC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDDA90ED2CE43C14005C06AC /* GoogleService-Info.plist */; };
 		CDDA90F12CE43CBE005C06AC /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = CDDA90F02CE43CBE005C06AC /* FirebaseAnalytics */; };
@@ -57,7 +58,6 @@
 		589302472CE33751005B7CB9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		589302492CE33780005B7CB9 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		5893024B2CE337B0005B7CB9 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
-		5893024D2CE348CB005B7CB9 /* CreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
 		58F6FA3F2CE333EC00E2391A /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		5B3E67937DF383CE082B712C /* Pods-TeamUp WashU-TeamUp WashUUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamUp WashU-TeamUp WashUUITests.release.xcconfig"; path = "Target Support Files/Pods-TeamUp WashU-TeamUp WashUUITests/Pods-TeamUp WashU-TeamUp WashUUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B77624352CE158E3009F5952 /* TeamUp WashU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TeamUp WashU.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +73,8 @@
 		B77624552CE158E6009F5952 /* TeamUp WashUUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TeamUp WashUUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B77624592CE158E6009F5952 /* TeamUp_WashUUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamUp_WashUUITests.swift; sourceTree = "<group>"; };
 		B776245B2CE158E6009F5952 /* TeamUp_WashUUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamUp_WashUUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CD4497B62CFBD5D500BA853C /* AssignmentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentCollectionViewCell.swift; sourceTree = "<group>"; };
+		CD4497B82CFBD64D00BA853C /* AssignmentDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentDetailsViewController.swift; sourceTree = "<group>"; };
 		CDBC32272CFA8164003F0BF9 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		CDDA90ED2CE43C14005C06AC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D54A1E93C52E0BC6B391E208 /* Pods-TeamUp WashU.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamUp WashU.release.xcconfig"; path = "Target Support Files/Pods-TeamUp WashU/Pods-TeamUp WashU.release.xcconfig"; sourceTree = "<group>"; };
@@ -154,7 +156,8 @@
 				B776243A2CE158E3009F5952 /* SceneDelegate.swift */,
 				B776243C2CE158E3009F5952 /* ViewController.swift */,
 				58F6FA3F2CE333EC00E2391A /* DashboardViewController.swift */,
-				5893024D2CE348CB005B7CB9 /* CreateEventViewController.swift */,
+				CD4497B62CFBD5D500BA853C /* AssignmentCollectionViewCell.swift */,
+				CD4497B82CFBD64D00BA853C /* AssignmentDetailsViewController.swift */,
 				589302472CE33751005B7CB9 /* ProfileViewController.swift */,
 				589302492CE33780005B7CB9 /* CalendarViewController.swift */,
 				CDBC32272CFA8164003F0BF9 /* MainTabBarController.swift */,
@@ -451,13 +454,14 @@
 			files = (
 				5893024A2CE33780005B7CB9 /* CalendarViewController.swift in Sources */,
 				B776243D2CE158E3009F5952 /* ViewController.swift in Sources */,
+				CD4497B92CFBD64D00BA853C /* AssignmentDetailsViewController.swift in Sources */,
 				CDBC32282CFA8164003F0BF9 /* MainTabBarController.swift in Sources */,
 				B77624392CE158E3009F5952 /* AppDelegate.swift in Sources */,
 				5893024C2CE337B0005B7CB9 /* ChatViewController.swift in Sources */,
+				CD4497B72CFBD5D500BA853C /* AssignmentCollectionViewCell.swift in Sources */,
 				589302482CE33751005B7CB9 /* ProfileViewController.swift in Sources */,
 				B776243B2CE158E3009F5952 /* SceneDelegate.swift in Sources */,
 				58F6FA402CE333ED00E2391A /* DashboardViewController.swift in Sources */,
-				5893024E2CE348CB005B7CB9 /* CreateEventViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
