@@ -1,14 +1,9 @@
-//
-//  DashboardViewController.swift
-//  TeamUp WashU
-//
-//  Created by Ahmadov, Kanan on 11/11/24.
-//
-
 import UIKit
-import Foundation
+import FirebaseFirestore
+import FirebaseAuth
 
 struct Assignment: Codable {
+    var id: String // Unique identifier for Firestore
     var name: String
     var dueDate: String
     var description: String
@@ -26,72 +21,87 @@ class DashboardViewController: UIViewController, UICollectionViewDataSource, UIC
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var categorySegmentedControl: UISegmentedControl!
     @IBOutlet weak var completionSegmentedControl: UISegmentedControl!
-    
-    // Assignments array (Data source)
+
+    // Firebase properties
+    let db = Firestore.firestore()
+    var userID: String? {
+        return Auth.auth().currentUser?.uid
+    }
+
+    // Assignments
     var assignments: [Assignment] = []
-    var filteredAssignments: [Assignment] = [] // For filtering by category and completion
+    var filteredAssignments: [Assignment] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Set up labels
         dashboardLabel.text = "Main Dashboard!"
 
-        // Set up collection view
         assignmentsCollectionView.dataSource = self
         assignmentsCollectionView.delegate = self
-
-        // Register the custom collection view cell
         assignmentsCollectionView.register(AssignmentCollectionViewCell.self, forCellWithReuseIdentifier: "assignmentCell")
 
-        // Initially hide the segmented controls
         categorySegmentedControl.isHidden = true
         completionSegmentedControl.isHidden = true
 
-        // Load assignments from UserDefaults
-        loadAssignments()
-        filterAssignments()
+        loadAssignmentsFromFirebase()
     }
 
-    // MARK: - Filter Assignments by Category and Completion
+    // MARK: - Load Assignments from Firebase
+    func loadAssignmentsFromFirebase() {
+        guard let userID = userID else { return }
+        db.collection("users").document(userID).collection("assignments").getDocuments { (snapshot, error) in
+            if let error = error {
+                print("Error fetching assignments: \(error.localizedDescription)")
+                return
+            }
+            self.assignments = snapshot?.documents.compactMap { doc -> Assignment? in
+                let data = doc.data()
+                return Assignment(
+                    id: doc.documentID,
+                    name: data["name"] as? String ?? "",
+                    dueDate: data["dueDate"] as? String ?? "",
+                    description: data["description"] as? String ?? "",
+                    teammates: data["teammates"] as? [String] ?? [],
+                    isCompleted: data["isCompleted"] as? Bool ?? false,
+                    categories: data["categories"] as? [String] ?? []
+                )
+            } ?? []
+            self.filterAssignments()
+        }
+    }
+
+    // MARK: - Filter Assignments
     @IBAction func categoryChanged(_ sender: UISegmentedControl) {
         filterAssignments()
-
     }
-    
+
     @IBAction func completionChanged(_ sender: UISegmentedControl) {
         filterAssignments()
     }
 
     private func filterAssignments() {
-        let selectedCategoryIndex = categorySegmentedControl.selectedSegmentIndex
-        let selectedCategory = categorySegmentedControl.titleForSegment(at: selectedCategoryIndex) ?? "All"
-        
-        let selectedCompletionIndex = completionSegmentedControl.selectedSegmentIndex
+        let selectedCategory = categorySegmentedControl.titleForSegment(at: categorySegmentedControl.selectedSegmentIndex) ?? "All"
         let selectedCompletion: Bool? = {
-            switch selectedCompletionIndex {
-            case 1: return true // Completed
-            case 2: return false // In-Progress
-            default: return nil // All
+            switch completionSegmentedControl.selectedSegmentIndex {
+            case 1: return true
+            case 2: return false
+            default: return nil
             }
         }()
 
-        // Start with all assignments
         filteredAssignments = assignments
 
-        // Filter by category if not "All"
         if selectedCategory != "All" {
             filteredAssignments = filteredAssignments.filter { $0.categories.contains(selectedCategory) }
         }
 
-        // Filter by completion status if specified
         if let isCompleted = selectedCompletion {
             filteredAssignments = filteredAssignments.filter { $0.isCompleted == isCompleted }
         }
 
         assignmentsCollectionView.reloadData()
     }
-
+    
     // MARK: - Show Segmented Controls on Search
     @IBAction func searchButtonTapped(_ sender: UIButton) {
         let shouldShow = categorySegmentedControl.isHidden && completionSegmentedControl.isHidden
@@ -99,73 +109,99 @@ class DashboardViewController: UIViewController, UICollectionViewDataSource, UIC
         completionSegmentedControl.isHidden = !shouldShow
     }
     
-    // MARK: - Create Button Action
+    // MARK: - Create Assignment
     @IBAction func createButtonTapped(_ sender: UIButton) {
         let alertController = UIAlertController(title: "New Assignment", message: "Enter assignment details", preferredStyle: .alert)
-        
-        alertController.addTextField { textField in
-            textField.placeholder = "Project Title"
-        }
-        
-        alertController.addTextField { textField in
-            textField.placeholder = "Due Date (example: 12/01/2024)"
-        }
-        
-        alertController.addTextField { textField in
-            textField.placeholder = "Description"
-        }
-        
-        alertController.addTextField { textField in
-            textField.placeholder = "Teammate Names"
-        }
-        
-        alertController.addTextField { textField in
-            textField.placeholder = "Category (choose: Homework, Side-Project, Other)"
-        }
+
+        alertController.addTextField { $0.placeholder = "Project Title" }
+        alertController.addTextField { $0.placeholder = "Due Date (mm/dd/yyyy)" }
+        alertController.addTextField { $0.placeholder = "Description" }
+        alertController.addTextField { $0.placeholder = "Teammate Names" }
+        alertController.addTextField { $0.placeholder = "Category (e.g., Homework, Side-Project)" }
 
         let submitAction = UIAlertAction(title: "Submit", style: .default) { _ in
             guard let name = alertController.textFields?[0].text, !name.isEmpty,
-                  let dueDate = alertController.textFields?[1].text, !dueDate.isEmpty else {
-                self.showAlert(message: "Assignment name and due date are required.")
+                  let dueDate = alertController.textFields?[1].text, !dueDate.isEmpty,
+                  let description = alertController.textFields?[2].text, !description.isEmpty,
+                  let teammatesText = alertController.textFields?[3].text, !teammatesText.isEmpty,
+                  let category = alertController.textFields?[4].text, !category.isEmpty else {
+                self.showAlert(message: "All fields are required.")
                 return
             }
 
-            // Validate the due date format
-            if !self.isValidDateFormat(dueDate) {
-                self.showAlert(message: "Invalid date format. Please use mm/dd/yyyy.")
+            guard self.isValidDateFormat(dueDate), self.isFutureDate(dueDate) else {
+                self.showAlert(message: "Due date must be in the future.")
                 return
             }
-            
-            let description = alertController.textFields?[2].text ?? ""
-            let teammates = alertController.textFields?[3].text?.split(separator: ",").map { $0.trimmingCharacters(in: .whitespaces) } ?? []
-            let category = alertController.textFields?[4].text ?? "Other"
 
-            // Create a new assignment
-            let newAssignment = Assignment(name: name, dueDate: dueDate, description: description, teammates: teammates, isCompleted: false, categories: [category])
-            self.assignments.append(newAssignment)
-            
-            // Save assignments to UserDefaults
-            self.saveAssignments()
-            
-            // Reload the collection view
-            self.filterAssignments()
+            let teammates = teammatesText.split(separator: ",").map { $0.trimmingCharacters(in: .whitespaces) }
+            let newAssignment = Assignment(
+                id: UUID().uuidString,
+                name: name,
+                dueDate: dueDate,
+                description: description,
+                teammates: teammates,
+                isCompleted: false,
+                categories: [category]
+            )
+            self.saveAssignmentToFirebase(newAssignment)
         }
-        
+
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-        
         alertController.addAction(submitAction)
         alertController.addAction(cancelAction)
-        
         present(alertController, animated: true)
     }
 
-    // MARK: - Helper Methods
-    private func isValidDateFormat(_ date: String) -> Bool {
-        let dateRegex = #"^\d{2}/\d{2}/\d{4}$"#
-        let datePredicate = NSPredicate(format: "SELF MATCHES %@", dateRegex)
-        return datePredicate.evaluate(with: date)
+    // MARK: - Save Assignment to Firebase
+    func saveAssignmentToFirebase(_ assignment: Assignment) {
+        guard let userID = userID else { return }
+        db.collection("users").document(userID).collection("assignments").document(assignment.id).setData([
+            "name": assignment.name,
+            "dueDate": assignment.dueDate,
+            "description": assignment.description,
+            "teammates": assignment.teammates,
+            "isCompleted": assignment.isCompleted,
+            "categories": assignment.categories
+        ]) { error in
+            if let error = error {
+                print("Error saving assignment: \(error.localizedDescription)")
+                return
+            }
+            self.assignments.append(assignment)
+            self.filterAssignments()
+        }
     }
-    
+
+    // MARK: - Assignment Button Tapped
+    @objc func assignmentButtonTapped(_ sender: UIButton) {
+        let tag = sender.tag
+        guard tag < filteredAssignments.count else { return }
+
+        let assignment = filteredAssignments[tag]
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let detailsVC = storyboard.instantiateViewController(withIdentifier: "AssignmentDetailsViewController") as? AssignmentDetailsViewController {
+            detailsVC.assignment = assignment
+            detailsVC.delegate = self
+            navigationController?.pushViewController(detailsVC, animated: true)
+        }
+    }
+
+    // MARK: - Helper Functions
+    private func isValidDateFormat(_ date: String) -> Bool {
+        let regex = #"^\d{2}/\d{2}/\d{4}$"#
+        return NSPredicate(format: "SELF MATCHES %@", regex).evaluate(with: date)
+    }
+
+    private func isFutureDate(_ date: String) -> Bool {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        if let date = dateFormatter.date(from: date) {
+            return date > Date()
+        }
+        return false
+    }
+
     private func showAlert(message: String) {
         let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default))
@@ -181,75 +217,54 @@ class DashboardViewController: UIViewController, UICollectionViewDataSource, UIC
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "assignmentCell", for: indexPath) as? AssignmentCollectionViewCell else {
             return UICollectionViewCell()
         }
-        
-        let assignment = filteredAssignments[indexPath.item]
-        
-        // Define colors in a specific order
-        let assignmentColors: [UIColor] = [
-            UIColor(red: 255/255, green: 204/255, blue: 0/255, alpha: 1), // Dark yellow
-            UIColor(red: 0/255, green: 0/255, blue: 139/255, alpha: 1), // Dark blue
-            UIColor(red: 0/255, green: 100/255, blue: 0/255, alpha: 1), // Dark green
-            .red,
-            UIColor(red: 139/255, green: 0/255, blue: 0/255, alpha: 1)  // Dark red
-        ]
 
-        // Get the color based on the index
-        let color = assignmentColors[indexPath.item % assignmentColors.count]
+        let assignment = filteredAssignments[indexPath.item]
+        let titleText = assignment.isCompleted ? "✅ \(assignment.name)" : assignment.name
+        cell.configure(
+            title: "\(titleText)\nDue: \(assignment.dueDate)",
+            backgroundColor: .orange
+        )
         
-        // Configure the cell
-        let statusText = assignment.isCompleted ? "✅" : ""
-        cell.configure(title: "\(assignment.name) \(statusText)\nDue: \(assignment.dueDate)", backgroundColor: color)
-        cell.assignmentButton.addTarget(self, action: #selector(assignmentButtonTapped(_:)), for: .touchUpInside)
         cell.assignmentButton.tag = indexPath.item
+        cell.assignmentButton.addTarget(self, action: #selector(assignmentButtonTapped(_:)), for: .touchUpInside)
 
         return cell
     }
-
-    // MARK: - Assignment Button Action
-    @IBAction func assignmentButtonTapped(_ sender: UIButton) {
-        let index = sender.tag
-        let assignment = filteredAssignments[index]
-
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if let detailsVC = storyboard.instantiateViewController(withIdentifier: "AssignmentDetailsViewController") as? AssignmentDetailsViewController {
-            detailsVC.delegate = self
-            detailsVC.assignment = assignment
-            navigationController?.pushViewController(detailsVC, animated: true)
-        } else {
-            print("Error: Could not instantiate AssignmentDetailsViewController")
-        }
-    }
-    
-    
-
-    // MARK: - Save and Load Assignments
-    func saveAssignments() {
-        if let encodedData = try? JSONEncoder().encode(assignments) {
-            UserDefaults.standard.set(encodedData, forKey: "assignments")
-        }
-    }
-
-    func loadAssignments() {
-        if let savedData = UserDefaults.standard.data(forKey: "assignments"),
-           let decodedAssignments = try? JSONDecoder().decode([Assignment].self, from: savedData) {
-            assignments = decodedAssignments
-        }
-    }
 }
+
 
 // MARK: - AssignmentDetailsDelegate Implementation
 extension DashboardViewController: AssignmentDetailsDelegate {
     func updateAssignment(updatedAssignment: Assignment) {
-        if let index = assignments.firstIndex(where: { $0.name == updatedAssignment.name }) {
-            assignments[index] = updatedAssignment
-            saveAssignments()
-            filterAssignments()
+        guard let userID = userID else { return }
+        db.collection("users").document(userID).collection("assignments").document(updatedAssignment.id).setData([
+            "name": updatedAssignment.name,
+            "dueDate": updatedAssignment.dueDate,
+            "description": updatedAssignment.description,
+            "teammates": updatedAssignment.teammates,
+            "isCompleted": updatedAssignment.isCompleted,
+            "categories": updatedAssignment.categories
+        ], merge: true) { error in
+            if let error = error {
+                print("Error updating assignment: \(error.localizedDescription)")
+                return
+            }
+            if let index = self.assignments.firstIndex(where: { $0.id == updatedAssignment.id }) {
+                self.assignments[index] = updatedAssignment
+                self.filterAssignments()
+            }
         }
     }
 
     func deleteAssignment(assignment: Assignment) {
-        assignments.removeAll { $0.name == assignment.name }
-        saveAssignments()
-        filterAssignments()
+        guard let userID = userID else { return }
+        db.collection("users").document(userID).collection("assignments").document(assignment.id).delete { error in
+            if let error = error {
+                print("Error deleting assignment: \(error.localizedDescription)")
+                return
+            }
+            self.assignments.removeAll { $0.id == assignment.id }
+            self.filterAssignments()
+        }
     }
 }

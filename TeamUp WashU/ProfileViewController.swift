@@ -224,35 +224,4 @@ class ProfileViewController: UIViewController {
     }
     
     
-    //    // Function to check if the user is new
-    //    func checkIfNewUser() {
-    //        let isNewUser = UserDefaults.standard.bool(forKey: "isNewUser")
-    //
-    //        if isNewUser {
-    //            // Clear all fields for a new user
-    //            profileImageView.image = UIImage(systemName: "person.circle")
-    //            nameTextField.text = ""
-    //            emailTextField.text = ""
-    //            phoneTextField.text = ""
-    //            majorTextField.text = ""
-    //            skills = []
-    //
-    //            // Save that the user is no longer new
-    //            UserDefaults.standard.set(false, forKey: "isNewUser")
-    //        } else {
-    //            // Load user data if it exists
-    //            fetchUserData()
-    //        }
-    //    }
-    
-    
-    
-    // Function to set up the profile image view
-   //    func setupProfileImageView() {
-   //        profileImageView.layer.cornerRadius = profileImageView.frame.size.width / 2
-   //        profileImageView.clipsToBounds = true
-   //        profileImageView.isUserInteractionEnabled = true
-   //        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(changeImageTapped))
-   //        profileImageView.addGestureRecognizer(tapGesture)
-   //    }
 }

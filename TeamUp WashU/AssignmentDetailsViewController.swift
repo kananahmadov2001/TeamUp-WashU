@@ -1,12 +1,6 @@
-//
-//  AssignmentDetailsViewController.swift
-//  TeamUp WashU
-//
-//  Created by Ahmadov, Kanan on 11/30/24.
-//
-
-import Foundation
 import UIKit
+import FirebaseFirestore
+import FirebaseAuth
 
 protocol AssignmentDetailsDelegate: AnyObject {
     func updateAssignment(updatedAssignment: Assignment)
@@ -15,7 +9,7 @@ protocol AssignmentDetailsDelegate: AnyObject {
 
 class AssignmentDetailsViewController: UIViewController {
 
-    // Outlets for text fields, buttons, and new UI components
+    // Outlets for UI elements
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var descriptionTextField: UITextField!
     @IBOutlet weak var dueDateTextField: UITextField!
@@ -25,6 +19,12 @@ class AssignmentDetailsViewController: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
     
+    // Firebase properties
+    let db = Firestore.firestore()
+    var userID: String? {
+        return Auth.auth().currentUser?.uid
+    }
+
     // Assignment passed from DashboardViewController
     var assignment: Assignment?
     weak var delegate: AssignmentDetailsDelegate?
@@ -84,35 +84,52 @@ class AssignmentDetailsViewController: UIViewController {
         let updatedStatus = statusSwitch.isOn // Get the status from the switch
         let updatedCategory = selectedCategory ?? "Other" // Default to "Other" if none selected
 
-        // Update assignment and notify delegate
-        if var updatedAssignment = assignment {
-            updatedAssignment.name = updatedName
-            updatedAssignment.dueDate = updatedDueDate
-            updatedAssignment.description = updatedDescription
-            updatedAssignment.teammates = updatedTeammates
-            updatedAssignment.isCompleted = updatedStatus
-            updatedAssignment.categories = [updatedCategory]
+        // Update assignment in Firebase and notify delegate
+        guard let userID = userID, var updatedAssignment = assignment else { return }
+        updatedAssignment.name = updatedName
+        updatedAssignment.dueDate = updatedDueDate
+        updatedAssignment.description = updatedDescription
+        updatedAssignment.teammates = updatedTeammates
+        updatedAssignment.isCompleted = updatedStatus
+        updatedAssignment.categories = [updatedCategory]
 
-            delegate?.updateAssignment(updatedAssignment: updatedAssignment)
+        db.collection("users").document(userID).collection("assignments").document(updatedAssignment.id).setData([
+            "name": updatedAssignment.name,
+            "dueDate": updatedAssignment.dueDate,
+            "description": updatedAssignment.description,
+            "teammates": updatedAssignment.teammates,
+            "isCompleted": updatedAssignment.isCompleted,
+            "categories": updatedAssignment.categories
+        ], merge: true) { error in
+            if let error = error {
+                print("Error updating assignment: \(error.localizedDescription)")
+                self.showAlert(message: "Failed to save assignment. Please try again.")
+                return
+            }
+            self.delegate?.updateAssignment(updatedAssignment: updatedAssignment)
+            self.navigationController?.popViewController(animated: true)
         }
-
-        navigationController?.popViewController(animated: true)
     }
     
     // MARK: - Delete Button Action
     @IBAction func deleteButtonTapped(_ sender: UIButton) {
-        guard let assignment = assignment else { return }
+        guard let userID = userID, let assignment = assignment else { return }
 
-        // Notify delegate to delete the assignment
-        delegate?.deleteAssignment(assignment: assignment)
-        navigationController?.popViewController(animated: true)
+        db.collection("users").document(userID).collection("assignments").document(assignment.id).delete { error in
+            if let error = error {
+                print("Error deleting assignment: \(error.localizedDescription)")
+                self.showAlert(message: "Failed to delete assignment. Please try again.")
+                return
+            }
+            self.delegate?.deleteAssignment(assignment: assignment)
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
     // Helper function to validate date format
     private func isValidDateFormat(_ date: String) -> Bool {
         let dateRegex = #"^\d{2}/\d{2}/\d{4}$"#
-        let datePredicate = NSPredicate(format: "SELF MATCHES %@", dateRegex)
-        return datePredicate.evaluate(with: date)
+        return NSPredicate(format: "SELF MATCHES %@", dateRegex).evaluate(with: date)
     }
     
     // Helper function to show alerts
