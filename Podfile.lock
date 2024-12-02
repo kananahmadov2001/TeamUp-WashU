@@ -1,16 +1,26 @@
 PODS:
   - FSCalendar (2.8.4)
+  - InputBarAccessoryView (5.5.0):
+    - InputBarAccessoryView/Core (= 5.5.0)
+  - InputBarAccessoryView/Core (5.5.0)
+  - MessageKit (3.8.0):
+    - InputBarAccessoryView (~> 5.5.0)
 
 DEPENDENCIES:
   - FSCalendar
+  - MessageKit
 
 SPEC REPOS:
   trunk:
     - FSCalendar
+    - InputBarAccessoryView
+    - MessageKit
 
 SPEC CHECKSUMS:
   FSCalendar: 2d1d0d9398f12d439f55c1fe0f01525b151b8260
+  InputBarAccessoryView: 1d7b0a672b36e370f01f264b3907ef39d03328e3
+  MessageKit: a1ba0c69ebead94029867853eb44dd05b9b3f453
 
-PODFILE CHECKSUM: 5c09130362fba3a5050435e14792efbf71b731db
+PODFILE CHECKSUM: 00b402da0073a6b0f27c3a520b7c8544311a6ae4
 
 COCOAPODS: 1.16.2

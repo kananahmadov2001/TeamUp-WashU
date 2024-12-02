@@ -29,6 +29,9 @@
 		B77624502CE158E6009F5952 /* TeamUp_WashUTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B776244F2CE158E6009F5952 /* TeamUp_WashUTests.swift */; };
 		B776245A2CE158E6009F5952 /* TeamUp_WashUUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77624592CE158E6009F5952 /* TeamUp_WashUUITests.swift */; };
 		B776245C2CE158E6009F5952 /* TeamUp_WashUUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B776245B2CE158E6009F5952 /* TeamUp_WashUUITestsLaunchTests.swift */; };
+		B79AE55D2CFD19B700C1BA97 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79AE55C2CFD19B700C1BA97 /* ConversationViewController.swift */; };
+		B79AE5612CFD34D500C1BA97 /* ConversationViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79AE5602CFD34D500C1BA97 /* ConversationViewCell.swift */; };
+		B79AE5682CFD3A3400C1BA97 /* NewConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79AE5672CFD3A3400C1BA97 /* NewConversationViewController.swift */; };
 		C335F0A88A9B1701FF477B08 /* Pods_TeamUp_WashU_TeamUp_WashUUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEE121FF4900A164FF7A752E /* Pods_TeamUp_WashU_TeamUp_WashUUITests.framework */; };
 		C46D44BE6F0AC4C2CD831D04 /* Pods_TeamUp_WashU.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2881EE6C0C77F8B9EE9DF0F /* Pods_TeamUp_WashU.framework */; };
 		CD4497B72CFBD5D500BA853C /* AssignmentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4497B62CFBD5D500BA853C /* AssignmentCollectionViewCell.swift */; };
@@ -88,6 +91,9 @@
 		B77624552CE158E6009F5952 /* TeamUp WashUUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TeamUp WashUUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B77624592CE158E6009F5952 /* TeamUp_WashUUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamUp_WashUUITests.swift; sourceTree = "<group>"; };
 		B776245B2CE158E6009F5952 /* TeamUp_WashUUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamUp_WashUUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B79AE55C2CFD19B700C1BA97 /* ConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
+		B79AE5602CFD34D500C1BA97 /* ConversationViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewCell.swift; sourceTree = "<group>"; };
+		B79AE5672CFD3A3400C1BA97 /* NewConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewConversationViewController.swift; sourceTree = "<group>"; };
 		CD4497B62CFBD5D500BA853C /* AssignmentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentCollectionViewCell.swift; sourceTree = "<group>"; };
 		CD4497B82CFBD64D00BA853C /* AssignmentDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentDetailsViewController.swift; sourceTree = "<group>"; };
 		CDBC32272CFA8164003F0BF9 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -152,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				B776243C2CE158E3009F5952 /* ViewController.swift */,
+				B79AE5672CFD3A3400C1BA97 /* NewConversationViewController.swift */,
 				58F6FA3F2CE333EC00E2391A /* DashboardViewController.swift */,
 				CD4497B82CFBD64D00BA853C /* AssignmentDetailsViewController.swift */,
 				589302472CE33751005B7CB9 /* ProfileViewController.swift */,
@@ -159,6 +166,7 @@
 				CDBC32272CFA8164003F0BF9 /* MainTabBarController.swift */,
 				5893024B2CE337B0005B7CB9 /* ChatViewController.swift */,
 				2A2A07742CFC6DED009D900C /* AddAssignmentViewController.swift */,
+				B79AE55C2CFD19B700C1BA97 /* ConversationViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -175,6 +183,7 @@
 		2AFF957F2CFC5CA100CBFB12 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				B79AE5622CFD34ED00C1BA97 /* Conversations */,
 				2AFF95812CFC5EEA00CBFB12 /* CalendarAssignment */,
 				CD4497B62CFBD5D500BA853C /* AssignmentCollectionViewCell.swift */,
 			);
@@ -264,6 +273,14 @@
 				B776245B2CE158E6009F5952 /* TeamUp_WashUUITestsLaunchTests.swift */,
 			);
 			path = "TeamUp WashUUITests";
+			sourceTree = "<group>";
+		};
+		B79AE5622CFD34ED00C1BA97 /* Conversations */ = {
+			isa = PBXGroup;
+			children = (
+				B79AE5602CFD34D500C1BA97 /* ConversationViewCell.swift */,
+			);
+			path = Conversations;
 			sourceTree = "<group>";
 		};
 		DFC633A3C8FDF7D7218EE2BC /* Pods */ = {
@@ -532,11 +549,14 @@
 			files = (
 				2A2A076C2CFC61CB009D900C /* Assignment.swift in Sources */,
 				2A2A07752CFC6DED009D900C /* AddAssignmentViewController.swift in Sources */,
+				B79AE55D2CFD19B700C1BA97 /* ConversationViewController.swift in Sources */,
+				B79AE5612CFD34D500C1BA97 /* ConversationViewCell.swift in Sources */,
 				5893024A2CE33780005B7CB9 /* CalendarViewController.swift in Sources */,
 				B776243D2CE158E3009F5952 /* ViewController.swift in Sources */,
 				CD4497B92CFBD64D00BA853C /* AssignmentDetailsViewController.swift in Sources */,
 				2AFF95852CFC5F3B00CBFB12 /* CalendarAssignmentTableViewCell.swift in Sources */,
 				CDBC32282CFA8164003F0BF9 /* MainTabBarController.swift in Sources */,
+				B79AE5682CFD3A3400C1BA97 /* NewConversationViewController.swift in Sources */,
 				B77624392CE158E3009F5952 /* AppDelegate.swift in Sources */,
 				2A2A07732CFC6740009D900C /* Date+.swift in Sources */,
 				5893024C2CE337B0005B7CB9 /* ChatViewController.swift in Sources */,

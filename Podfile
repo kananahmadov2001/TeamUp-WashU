@@ -7,6 +7,8 @@ target 'TeamUp WashU' do
 
   # Pods for TeamUp WashU
   pod 'FSCalendar'
+  pod 'MessageKit'
+
 
   target 'TeamUp WashUTests' do
     inherit! :search_paths
@@ -17,6 +19,8 @@ target 'TeamUp WashU' do
     # Pods for testing
   end
 end
+
+
 
 post_install do |installer|
   installer.pods_project.targets.each do |target|

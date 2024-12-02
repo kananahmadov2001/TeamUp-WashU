@@ -623,21 +623,53 @@
             </objects>
             <point key="canvasLocation" x="4383.9694656488546" y="-287.32394366197184"/>
         </scene>
-        <!--ChatViewController-->
+        <!--ConversationViewController-->
         <scene sceneID="hsO-FV-i2Z">
             <objects>
-                <viewController title="ChatViewController" id="wcY-CH-Sdu" sceneMemberID="viewController">
+                <viewController title="ConversationViewController" id="wcY-CH-Sdu" customClass="ConversationViewController" customModule="TeamUp_WashU" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ptv-0A-Kf3">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X4y-ou-i4s">
+                                <rect key="frame" x="115" y="322" width="144" height="34.333333333333314"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Enter Chatroom"/>
+                                <connections>
+                                    <action selector="enterChat:" destination="wcY-CH-Sdu" eventType="touchUpInside" id="QKA-U5-dsq"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="xOL-PM-kGt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xOL-PM-kGt" firstAttribute="bottom" secondItem="X4y-ou-i4s" secondAttribute="bottom" constant="412.67000000000002" id="Ui5-N5-sVE"/>
+                            <constraint firstItem="X4y-ou-i4s" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="xOL-PM-kGt" secondAttribute="leading" symbolic="YES" id="WQh-qc-EfQ"/>
+                            <constraint firstItem="X4y-ou-i4s" firstAttribute="leading" secondItem="xOL-PM-kGt" secondAttribute="leading" constant="115" id="fU9-Es-djZ"/>
+                            <constraint firstItem="xOL-PM-kGt" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="X4y-ou-i4s" secondAttribute="trailing" symbolic="YES" id="gqp-GR-sGb"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass.circle" catalog="system" selectedImage="magnifyingglass.circle.fill" id="kZp-5O-fpB"/>
+                    <tabBarItem key="tabBarItem" title="Chat" image="message.badge.filled.fill" catalog="system" selectedImage="message.fill" id="kZp-5O-fpB"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uqr-PH-soj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3831" y="1045"/>
+            <point key="canvasLocation" x="3829.770992366412" y="1044.3661971830986"/>
+        </scene>
+        <!--ChatViewController-->
+        <scene sceneID="0k4-8x-Ffr">
+            <objects>
+                <viewController storyboardIdentifier="ChatViewController" title="ChatViewController" id="nle-cK-idz" customClass="ChatViewController" customModule="TeamUp_WashU" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mIK-n7-YJP">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="cU9-p2-wHE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="iuq-CH-tdj"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tQ9-hS-WDy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4628" y="1044"/>
         </scene>
         <!--Add Assignment View Controller-->
         <scene sceneID="w80-wf-a4q">
@@ -875,8 +907,8 @@
         <image name="dashboard-pic" width="608" height="608"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
-        <image name="magnifyingglass.circle" catalog="system" width="128" height="123"/>
-        <image name="magnifyingglass.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="message.badge.filled.fill" catalog="system" width="128" height="122"/>
+        <image name="message.fill" catalog="system" width="128" height="114"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="person.crop.circle" catalog="system" width="128" height="123"/>
         <image name="person.crop.circle.fill" catalog="system" width="128" height="123"/>

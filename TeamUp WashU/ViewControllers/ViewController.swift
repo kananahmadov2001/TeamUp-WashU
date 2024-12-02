@@ -57,6 +57,7 @@ class ViewController:
             }
             print("User logged in successfully: \(authResult?.user.email ?? "")")
             self.showAlert(message: "Logged in")
+            UserDefaults.standard.set(email, forKey: "email")
             self.NavigateToLoginPage()
         }
     }

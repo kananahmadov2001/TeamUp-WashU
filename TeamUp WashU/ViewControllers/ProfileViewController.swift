@@ -80,7 +80,7 @@ class ProfileViewController: UIViewController {
                 self.majorTextField.text = data["major"] as? String ?? ""
                 self.skills =  data["skills"] as? [String] ?? []
                 self.updateSkillsStackView()
-                
+                    
             }else {
                 self.createUserDocument()
                 
