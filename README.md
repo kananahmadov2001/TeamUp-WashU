@@ -4,7 +4,7 @@ TeamUp WashU is a project management and collaboration app designed for Washingt
 The app streamlines teamwork with features like project tracking, calendar integration, and customizable profiles, making it an essential tool for managing student activities and assignments.
 
 ```
-Note: This was my final project for my Mobile Application Development class I took at WashU with a team of 4.
+Note: This was my final project for my Mobile App. Dev. class I took at WashU with a team of 4.
 ```
 
 ---
