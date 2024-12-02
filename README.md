@@ -42,7 +42,7 @@ The app streamlines teamwork with features like project tracking, calendar integ
 ## 👥 **Collaborators**
 
 * [Ahmadov Kanan] - UI Design, Main Dashboard and Project Management, Firebase Integration
-* [Sam Gil] -
+* [Sam Gil] - UI Design, Chat Integration, Firebase Integration 
 * [Ted Kim] - UI Design, Calendar Integration, Firebase Integration
 * [Abdou Sow] - UI Design, Firebase Setup, Authentication System, Profile Customization, Firebase Integration
 
