@@ -1,4 +1,6 @@
-# TeamUp WashU
+<div align="center">
+    <h1 id="Header">TeamUp WashU</h1>
+</div>
 
 TeamUp WashU is a project management and collaboration app designed for Washington University in St. Louis students. 
 The app streamlines teamwork with features like project tracking, calendar integration, and customizable profiles, making it an essential tool for managing student activities and assignments.
